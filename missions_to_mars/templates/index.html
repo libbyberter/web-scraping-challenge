@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Info</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center" style="background-color:lavender ;">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button" style="background-color: rebeccapurple;">Get Mars Data</a></p>
+    </div>
+
+  </div>
+
+
+  <div class="container-fluid" >
+    <div class="row">
+      <div class="col-md-12">
+        <h2 style="color: rebeccapurple;">Latest Mars Update</h2>
+        <h5><strong>{{ planet.news_title }}</strong></h5>
+        <p>{{ planet.news_article }}</p>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div class="col-md-7">
+        <h2 style="color: rebeccapurple;">Featured Image</h2>
+        <img src="{{ planet.featured_image_url }}" alt="Featured Image" class="rounded mx-auto d-block">
+      </div>
+      <div class="col-md-5">
+        <h2 style="color: rebeccapurple;">Planet Facts</h2>
+        <p>
+          <div class="table-responsive" style="overflow:hidden;color: black;">
+            {{ planet.mars_table|safe }}
+          </div>
+        </p>
+      </div>
+    </div>
+
+    <br>
+    <br>
+   
+    <div class="row" >
+      <div class="col-md-3" style="padding-bottom: 3rem;">
+        <h5 style="color: rebeccapurple; text-align: center;"><strong>{{ planet.hemispheres[0].title }}</strong></h5>
+        <img src="{{ planet.hemispheres[0].img_url }}" alt="Featured Image" class="rounded mx-auto d-block img-thumbnail"> 
+      </div>
+      <div class="col-md-3" style="padding-bottom: 3rem;">
+        <h5 style="color: rebeccapurple; text-align: center;"><strong>{{ planet.hemispheres[1].title }}</strong></h5>
+        <img src="{{ planet.hemispheres[1].img_url }}" alt="Featured Image" class="rounded mx-auto d-block img-thumbnail"> 
+      </div>
+      <div class="col-md-3" style="padding-bottom: 3rem;">
+        <h5 style="color: rebeccapurple; text-align: center;"><strong>{{ planet.hemispheres[2].title }}</strong></h5>
+        <img src="{{ planet.hemispheres[2].img_url }}" alt="Featured Image" class="rounded mx-auto d-block img-thumbnail"> 
+      </div>
+      <div class="col-md-3" style="padding-bottom: 3rem;">
+        <h5 style="color: rebeccapurple; text-align: center;"><strong>{{ planet.hemispheres[3].title }}</strong></h5>
+        <img src="{{ planet.hemispheres[3].img_url }}" alt="Featured Image" class="rounded mx-auto d-block img-thumbnail"> 
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
